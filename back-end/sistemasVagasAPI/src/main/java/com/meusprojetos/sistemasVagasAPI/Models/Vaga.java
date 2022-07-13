@@ -1,8 +1,7 @@
 package com.meusprojetos.sistemasVagasAPI.Models;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -29,9 +28,9 @@ public class Vaga {
 	@Enumerated(EnumType.STRING)
 	private TipoContrato tipoContrato;
 	@Temporal(TemporalType.DATE)
-	private LocalDate dataInicio;
+	private Date dataInicio;
 	@Temporal(TemporalType.DATE)
-	private LocalDate dataFimCandidatura;
+	private Date dataFimCandidatura;
 	@Column(scale = 2)
 	private BigDecimal salario;
 	@Column(nullable = false)
@@ -48,9 +47,9 @@ public class Vaga {
 	@Column(nullable = false)
 	private Boolean validado = false;
 	@Temporal(TemporalType.TIMESTAMP)
-	private LocalDateTime dataCriacao;
+	private Date dataCriacao;
 	@Temporal(TemporalType.TIMESTAMP)
-	private LocalDateTime dataModificacao;
+	private Date dataModificacao;
 	@Column(nullable = false)
 	private Boolean desabilita = false;
 	@Column(nullable = false)
@@ -65,8 +64,8 @@ public class Vaga {
 
 	public Vaga() {}
 
-	public Vaga(String titulo, TipoTrabalho tipoTrabalho, TipoContrato tipoContrato, LocalDate dataInicio,
-			LocalDate dataFimCandidatura, BigDecimal salario, Integer cargaHoraria, String descricao,
+	public Vaga(String titulo, TipoTrabalho tipoTrabalho, TipoContrato tipoContrato, Date dataInicio,
+			Date dataFimCandidatura, BigDecimal salario, Integer cargaHoraria, String descricao,
 			String responsabilidades, String requisitos, String outros, String linkCandidatura,
 			String nomeUsuarioCriacao, Empresa empresa, List<Beneficio> beneficio, List<Curso> curso) {
 		this.titulo = titulo;
@@ -81,7 +80,7 @@ public class Vaga {
 		this.requisitos = requisitos;
 		this.outros = outros;
 		this.linkCandidatura = linkCandidatura;
-		this.dataCriacao = LocalDateTime.now();
+		this.dataCriacao = new Date();
 		this.nomeUsuarioCriacao = nomeUsuarioCriacao;
 		this.empresa = empresa;
 		this.beneficio = beneficio;
@@ -121,19 +120,19 @@ public class Vaga {
 		this.tipoContrato = tipoContrato;
 	}
 
-	public LocalDate getDataInicio() {
+	public Date getDataInicio() {
 		return dataInicio;
 	}
 
-	public void setDataInicio(LocalDate dataInicio) {
+	public void setDataInicio(Date dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 
-	public LocalDate getDataFimCandidatura() {
+	public Date getDataFimCandidatura() {
 		return dataFimCandidatura;
 	}
 
-	public void setDataFimCandidatura(LocalDate dataFimCandidatura) {
+	public void setDataFimCandidatura(Date dataFimCandidatura) {
 		this.dataFimCandidatura = dataFimCandidatura;
 	}
 
@@ -209,19 +208,19 @@ public class Vaga {
 		this.validado = validado;
 	}
 
-	public LocalDateTime getDataCriacao() {
+	public Date getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(LocalDateTime dataCriacao) {
+	public void setDataCriacao(Date dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public LocalDateTime getDataModificacao() {
+	public Date getDataModificacao() {
 		return dataModificacao;
 	}
 
-	public void setDataModificacao(LocalDateTime dataModificacao) {
+	public void setDataModificacao(Date dataModificacao) {
 		this.dataModificacao = dataModificacao;
 	}
 

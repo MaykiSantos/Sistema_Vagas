@@ -1,6 +1,6 @@
 package com.meusprojetos.sistemasVagasAPI.Models;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -27,9 +27,9 @@ public class Usuario {
 	@Column(nullable = false, length = 500)
 	private String senha;
 	@Temporal(TemporalType.TIMESTAMP)
-	private LocalDateTime dataCriacao;
+	private Date dataCriacao;
 	@Temporal(TemporalType.TIMESTAMP)
-	private LocalDateTime dataModificacao;
+	private Date dataModificacao;
 	private Boolean emailValidado = false;
 	private Boolean desabilita = false;
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -43,7 +43,7 @@ public class Usuario {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
-		this.dataCriacao = LocalDateTime.now();
+		this.dataCriacao = new Date();
 		this.empresa = empresa;
 		this.perfil = perfil;
 	}
@@ -80,19 +80,19 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public LocalDateTime getDataCriacao() {
+	public Date getDataCriacao() {
 		return dataCriacao;
 	}
 
-	public void setDataCriacao(LocalDateTime dataCriacao) {
+	public void setDataCriacao(Date dataCriacao) {
 		this.dataCriacao = dataCriacao;
 	}
 
-	public LocalDateTime getDataModificacao() {
+	public Date getDataModificacao() {
 		return dataModificacao;
 	}
 
-	public void setDataModificacao(LocalDateTime dataModificacao) {
+	public void setDataModificacao(Date dataModificacao) {
 		this.dataModificacao = dataModificacao;
 	}
 
