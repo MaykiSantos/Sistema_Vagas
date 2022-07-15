@@ -1,4 +1,4 @@
-package com.meusprojetos.sistemasVagasAPI.Models;
+package com.meusprojetos.sistemasVagasAPI.Models.Entity;
 
 import java.util.List;
 
@@ -10,6 +10,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+@NoArgsConstructor
 @Entity
 public class Setor {
 	
@@ -20,35 +27,8 @@ public class Setor {
 	@ManyToMany(fetch = FetchType.LAZY)
 	private List<Empresa> empresa;
 	
-	public Setor() {}
-
 	public Setor(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-
-	public List<Empresa> getEmpresa() {
-		return empresa;
-	}
-
-	public void setEmpresa(List<Empresa> empresa) {
-		this.empresa = empresa;
-	}
-	
 	
 }

@@ -1,5 +1,8 @@
-package com.meusprojetos.sistemasVagasAPI.Models;
+package com.meusprojetos.sistemasVagasAPI.Models.Entity;
 
+import lombok.Getter;
+
+@Getter
 public enum StatusVaga {
 
 	PUBLICADO("publicado"), 
@@ -12,11 +15,6 @@ public enum StatusVaga {
 
 	private StatusVaga(String valor) {
 		this.valor = valor;
-	}
-
-	public String getValor() {
-		return valor;
-	}
-	
+	}	
 	
 }
